@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+}
+.animated_card{
+    display: grid;
+    place-items: center;
+    position: relative;
+    height: 500px;
+    width: 350px;
+    background: #222;
+    border-radius: 10px;
+    cursor:pointer;
+}
+.animated_card::before{
+    position: absolute;
+    content: '';
+    height: 500px;
+    width: 350px;
+    background: tomato;
+    border-radius: 15px;
+    z-index: -1;
+    transition: 0.3s;
+    animation: animate 2s linear infinite;
+}
+.animated_card:hover::before{
+    height: 512px;
+    width: 362px;
+}
+@keyframes animate {
+
+    50%{
+        filter: hue-rotate(350deg);
+    }
+}
